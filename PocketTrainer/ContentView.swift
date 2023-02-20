@@ -46,10 +46,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
+                Text("PocketTrainer")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                    .padding()
+                
                 VStack{
                     TextField("Email Address", text: $email)
                         .padding()
@@ -57,6 +59,7 @@ struct ContentView: View {
                     SecureField("Password", text: $password)
                         .padding()
                         .background(Color(.secondarySystemBackground))
+                    
                     Button(action:{
                         guard !email.isEmpty, !password.isEmpty else {
                             return
@@ -71,17 +74,67 @@ struct ContentView: View {
                             .cornerRadius(8)
                             .background(Color.blue)
                         
-                        
                     })
+                    
+                    HStack {
+                        Text("Or sign up with:")
+                            .font(.caption)
+                        
+                        Button(action: {
+                            // handle Twitter sign up
+                        }, label: {
+                            Image("Twitter")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                                .padding()
+                        })
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        
+                        Button(action: {
+                            // handle Facebook sign up
+                        }, label: {
+                            Image("Facebook")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                                .padding()
+                        })
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                    }
+                    .padding(.top, 16)
+                    
+                    Button(action: {
+                        // handle forgot password
+                    }, label: {
+                        Text("Forgot your password?")
+                            .font(.caption)
+                            .foregroundColor(.blue)
+                    })
+                    .padding(.top, 8)
                 }
                 .padding()
                 
                 Spacer()
+                
+                Button(action: {
+                    // handle sign up
+                }, label: {
+                    Text("Sign Up")
+                        .foregroundColor(Color.white)
+                        .frame(width: 200, height: 50)
+                        .cornerRadius(8)
+                        .background(Color.green)
+                })
+                .padding(.bottom, 16)
             }
             .navigationTitle("Sign In")
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
