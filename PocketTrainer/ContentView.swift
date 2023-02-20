@@ -12,6 +12,8 @@ class AppViewModel: ObservableObject {
     
     let auth = Auth.auth()
     
+    @Published var signedIn = false
+    
     var isSignedIn: Bool {
         return auth.currentUser != nil
     }
@@ -38,13 +40,31 @@ class AppViewModel: ObservableObject {
 }
 
 struct ContentView: View {
-    @State var email = ""
-    @State var password = ""
     
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
         NavigationView {
+            if viewModel.isSignedIn{
+                Text("You are signed In")
+            }
+            else{
+                SignInView()
+            }
+        }
+        .onAppear {
+            viewModel.signedIn = viewModel.isSignedIn
+        }
+    }
+}
+    
+struct SignInView: View {
+        @State var email = ""
+        @State var password = ""
+        
+        @EnvironmentObject var viewModel: AppViewModel
+        
+        var body: some View {
             VStack {
                 Text("PocketTrainer")
                     .font(.title)
@@ -132,8 +152,8 @@ struct ContentView: View {
             }
             .navigationTitle("Sign In")
         }
-    }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
