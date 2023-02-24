@@ -34,7 +34,7 @@ class AppViewModel: ObservableObject {
     }
     
     func signUp(email: String, password: String) {
-        auth.createUser(withEmail: email, password: password) { [weak self]result, error in
+        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
             guard result != nil, error == nil else{
                 return
             }
@@ -84,9 +84,13 @@ struct SignInView: View {
             
             VStack{
                 TextField("Email Address", text: $email)
+                    .disableAutocorrection(false)
+                    .autocapitalization(.none)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                 SecureField("Password", text: $password)
+                    .disableAutocorrection(false)
+                    .autocapitalization(.none)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                 
@@ -105,6 +109,7 @@ struct SignInView: View {
                         .background(Color.blue)
                     
                 })
+                .padding()
                 
                 Text("Don't have an account?")
                 NavigationLink("Sign Up", destination: SignUpView())
@@ -133,9 +138,13 @@ struct SignUpView: View {
             
             VStack{
                 TextField("Email Address", text: $email)
+                    .disableAutocorrection(false)
+                    .autocapitalization(.none)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                 SecureField("Password", text: $password)
+                    .disableAutocorrection(false)
+                    .autocapitalization(.none)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                 
@@ -144,7 +153,8 @@ struct SignUpView: View {
                         return
                     }
                     
-                    viewModel.signIn(email: email, password: password)
+                    viewModel.signUp(email: email, password: password)
+                    
                 }, label: {
                     
                     Text("Sign Up")
