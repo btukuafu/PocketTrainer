@@ -47,6 +47,12 @@ class AppViewModel: ObservableObject {
         }
     }
     
+    func signOut() {
+        try? auth.signOut()
+        
+        self.signedIn = false
+    }
+    
 }
 
 struct ContentView: View {
@@ -56,7 +62,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if viewModel.signedIn{
-                Text("You are signed In")
+                VStack {
+                    
+                    Text("You are signed In")
+                    Button(action: {
+                        viewModel.signOut()
+                    }, label: {
+                        Text("Sign Out")
+                            .frame(width: 200, height: 50)
+                            .background(Color.blue)
+                            .foregroundColor(Color.white)
+                            .padding()
+                    })
+                }
             }
             else{
                 SignInView()
