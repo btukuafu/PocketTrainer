@@ -5,6 +5,7 @@
 //  Created by Bruce Tukuafu on 1/26/23.
 //
 
+
 import SwiftUI
 import FirebaseAuth
 
@@ -55,28 +56,52 @@ class AppViewModel: ObservableObject {
     
 }
 
+//struct ContentView: View {
+//
+//    @EnvironmentObject var viewModel: AppViewModel
+//
+//    var body: some View {
+//        NavigationView {
+//            if viewModel.signedIn{
+//                VStack {
+//
+//                    Text("You are signed In")
+//                    Button(action: {
+//                        viewModel.signOut()
+//                    }, label: {
+//                        Text("Sign Out")
+//                            .frame(width: 200, height: 50)
+//                            .background(Color.blue)
+//                            .foregroundColor(Color.white)
+//                            .padding()
+//                    })
+//                }
+//            }
+//            else{
+//                SignInView()
+//            }
+//        }
+//        .onAppear {
+//            viewModel.signedIn = viewModel.isSignedIn
+//        }
+//    }
+//}
+
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
         NavigationView {
-            if viewModel.signedIn{
-                VStack {
-                    
-                    Text("You are signed In")
-                    Button(action: {
-                        viewModel.signOut()
-                    }, label: {
-                        Text("Sign Out")
-                            .frame(width: 200, height: 50)
-                            .background(Color.blue)
-                            .foregroundColor(Color.white)
-                            .padding()
-                    })
-                }
-            }
-            else{
+            if viewModel.signedIn {
+                TrainView() // <-- Add this line
+                    .navigationTitle("Training")
+                    .navigationBarItems(
+                        trailing: Button(action: viewModel.signOut, label: {
+                            Text("Sign Out")
+                        })
+                    )
+            } else {
                 SignInView()
             }
         }
@@ -86,6 +111,7 @@ struct ContentView: View {
     }
 }
 
+
 struct SignInView: View {
     @State var email = ""
     @State var password = ""
@@ -94,7 +120,7 @@ struct SignInView: View {
     
     var body: some View {
         VStack {
-            Text("PocketTrainer")
+            Text("Sign In")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.blue)
@@ -136,7 +162,8 @@ struct SignInView: View {
             
             Spacer()
         }
-        .navigationTitle("Sign In")
+        .navigationTitle("PocketTrainer")
+        
     }
 }
 
@@ -148,7 +175,7 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
-            Text("PocketTrainer")
+            Text("Sign Up")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.blue)
@@ -227,10 +254,10 @@ struct SignUpView: View {
             Spacer()
             
         }
-        .navigationTitle("Sign Up")
+        .navigationTitle("PocketTrainer")
+    
     }
 }
-
 
 
 struct ContentView_Previews: PreviewProvider {
