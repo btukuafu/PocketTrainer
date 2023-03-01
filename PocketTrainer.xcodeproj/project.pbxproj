@@ -14,6 +14,7 @@
 		83E6A7FA00874B169C39A222 /* Pods_PocketTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2110F829F27E4F21842914F /* Pods_PocketTrainer.framework */; };
 		D015414229AEC44800620D5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D015414129AEC44800620D5F /* GoogleService-Info.plist */; };
 		D015414829AED7E700620D5F /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015414729AED7E700620D5F /* TrainView.swift */; };
+		D015414A29AFCA0A00620D5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015414929AFCA0A00620D5F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A2110F829F27E4F21842914F /* Pods_PocketTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D015414129AEC44800620D5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D015414729AED7E700620D5F /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		D015414929AFCA0A00620D5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				D015414129AEC44800620D5F /* GoogleService-Info.plist */,
 				4BCAFB992983A0E100C95DA3 /* PocketTrainerApp.swift */,
 				4BCAFB9B2983A0E100C95DA3 /* ContentView.swift */,
+				D015414929AFCA0A00620D5F /* ProfileView.swift */,
 				D015414729AED7E700620D5F /* TrainView.swift */,
 				4BCAFB9D2983A0E300C95DA3 /* Assets.xcassets */,
 				4BCAFB9F2983A0E300C95DA3 /* Preview Content */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D015414A29AFCA0A00620D5F /* ProfileView.swift in Sources */,
 				4BCAFB9C2983A0E100C95DA3 /* ContentView.swift in Sources */,
 				D015414829AED7E700620D5F /* TrainView.swift in Sources */,
 				4BCAFB9A2983A0E100C95DA3 /* PocketTrainerApp.swift in Sources */,

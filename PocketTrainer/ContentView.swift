@@ -56,36 +56,7 @@ class AppViewModel: ObservableObject {
     
 }
 
-//struct ContentView: View {
-//
-//    @EnvironmentObject var viewModel: AppViewModel
-//
-//    var body: some View {
-//        NavigationView {
-//            if viewModel.signedIn{
-//                VStack {
-//
-//                    Text("You are signed In")
-//                    Button(action: {
-//                        viewModel.signOut()
-//                    }, label: {
-//                        Text("Sign Out")
-//                            .frame(width: 200, height: 50)
-//                            .background(Color.blue)
-//                            .foregroundColor(Color.white)
-//                            .padding()
-//                    })
-//                }
-//            }
-//            else{
-//                SignInView()
-//            }
-//        }
-//        .onAppear {
-//            viewModel.signedIn = viewModel.isSignedIn
-//        }
-//    }
-//}
+
 
 struct ContentView: View {
     
