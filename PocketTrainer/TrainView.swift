@@ -8,8 +8,38 @@
 
 import SwiftUI
 import FirebaseAuth
+import CoreBluetooth
+
+class BluetoothViewModel: NSObject, ObservableObject{
+    private var centralManager: CBCentralManager?
+    private var peripherals: [CBPeripheral] = []
+    @Published var peripheralNames: [String] = []
+    
+    override init() {
+        super.init()
+        self.centralManager = CBCentralManager(delegate: self, queue: .main)
+        
+    }
+}
+
+extension BluetoothViewModel: CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn {
+            self.centralManager?.scanForPeripherals(withServices: nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        if !peripherals.contains(peripheral) {
+            self.peripherals.append(peripheral)
+            self.peripheralNames.append(peripheral.name ?? "Unamed device")
+        }
+    }
+}
 
 struct TrainView: View {
+    
+    @ObservedObject private var bluetoothViewModel = BluetoothViewModel()
 
     @State private var exerciseType = "Bench Press"
     @State private var weight = ""
@@ -17,7 +47,8 @@ struct TrainView: View {
     @State private var sets = ""
     @State private var isWorkoutInProgress = false
     @State private var isShowingSettings = false
-
+    @State private var showBluetooth = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -44,19 +75,18 @@ struct TrainView: View {
                 .padding(.horizontal)
 
                 HStack {
-                    Text("Connect to Bluetooth")
+                    
+                    NavigationLink(destination: BluetoothView()){
+                        (Text("Connect to Bluetooth") + Text(Image(systemName: "bolt.fill")))
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.blue)
-
-                    Button(action: {
-                        // code to try and connect to Bluetooth
-                    }) {
-                        Image(systemName: "bolt.fill")
-                            .foregroundColor(.blue)
-                            .frame(width: 1, height: 1)
+                        
                     }
                 }
                 .padding(.top, 30)
+                
+               
+                
 
                 VStack {
                     Picker("Exercise Type", selection: $exerciseType) {
@@ -76,15 +106,18 @@ struct TrainView: View {
                     TextField("Weight (lbs)", text: $weight)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+                        .keyboardType(.decimalPad)
 
                     TextField("Reps", text: $reps)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+                        .keyboardType(.decimalPad)
 
                     TextField("Sets", text: $sets)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-
+                        .keyboardType(.decimalPad)
+                    
                     Button(action: {
                         isWorkoutInProgress.toggle()
                         // code to start workout
@@ -119,6 +152,19 @@ struct TrainView: View {
 struct Trainview_Previews: PreviewProvider {
     static var previews: some View {
         TrainView()
+    }
+}
+
+struct BluetoothView: View {
+    @ObservedObject private var bluetoothViewModel = BluetoothViewModel()
+    
+    var body: some View {
+        NavigationView {
+            List(bluetoothViewModel.peripheralNames, id: \.self) {
+                peripheral in Text(peripheral)
+            }
+            .navigationTitle("Bluetooth Devices")
+        }
     }
 }
 
