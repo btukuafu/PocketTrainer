@@ -66,7 +66,7 @@ struct ContentView: View {
         NavigationView {
             if viewModel.signedIn {
                 TrainView() // <-- Add this line
-                    .navigationTitle("Training")
+                    .navigationTitle("PocketTrainer")
                     .navigationBarItems(
                         trailing: Button(action: viewModel.signOut, label: {
                             Text("Sign Out")
