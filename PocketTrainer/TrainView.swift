@@ -47,7 +47,7 @@ struct TrainView: View {
     @State private var sets = ""
     @State private var isWorkoutInProgress = false
     @State private var isShowingSettings = false
-    @State private var showBluetooth = false
+ 
     
     var body: some View {
         NavigationView {
@@ -132,6 +132,9 @@ struct TrainView: View {
                     .padding(.horizontal)
                     .padding(.bottom, 20)
                 }
+                .onTapGesture {
+                    hideKeyboard()
+                }
 
                 if isWorkoutInProgress {
                     Text("Work in progress")
@@ -148,7 +151,12 @@ struct TrainView: View {
         }
     }
 }
-
+extension TrainView {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+}
 struct Trainview_Previews: PreviewProvider {
     static var previews: some View {
         TrainView()
