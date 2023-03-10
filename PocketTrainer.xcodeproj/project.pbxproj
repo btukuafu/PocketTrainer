@@ -12,6 +12,10 @@
 		4BCAFB9C2983A0E100C95DA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAFB9B2983A0E100C95DA3 /* ContentView.swift */; };
 		4BCAFB9E2983A0E300C95DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BCAFB9D2983A0E300C95DA3 /* Assets.xcassets */; };
 		4BCAFBA12983A0E300C95DA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BCAFBA02983A0E300C95DA3 /* Preview Assets.xcassets */; };
+		4BFBFFA529BAE9510046A6C8 /* PT_Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBFFA329BAE9510046A6C8 /* PT_Database.xcdatamodeld */; };
+		4BFBFFB629BAF8370046A6C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBFFB529BAF8370046A6C8 /* ViewController.swift */; };
+		4BFBFFB929BB03080046A6C8 /* WorkoutList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBFFB829BB03080046A6C8 /* WorkoutList+CoreDataClass.swift */; };
+		4BFBFFBA29BB03080046A6C8 /* WorkoutList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBFFB729BB03080046A6C8 /* WorkoutList+CoreDataProperties.swift */; };
 		83E6A7FA00874B169C39A222 /* Pods_PocketTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2110F829F27E4F21842914F /* Pods_PocketTrainer.framework */; };
 		D015414829AED7E700620D5F /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015414729AED7E700620D5F /* TrainView.swift */; };
 		D015414A29AFCA0A00620D5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015414929AFCA0A00620D5F /* ProfileView.swift */; };
@@ -27,6 +31,10 @@
 		4BCAFB9B2983A0E100C95DA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BCAFB9D2983A0E300C95DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BCAFBA02983A0E300C95DA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4BFBFFA429BAE9510046A6C8 /* PT_Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PT_Database.xcdatamodel; sourceTree = "<group>"; };
+		4BFBFFB529BAF8370046A6C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BFBFFB729BB03080046A6C8 /* WorkoutList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WorkoutList+CoreDataProperties.swift"; path = "/Users/brucetukuafu/iOS_Apps/PocketTrainer/PocketTrainer/PocketTrainer/WorkoutList+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		4BFBFFB829BB03080046A6C8 /* WorkoutList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WorkoutList+CoreDataClass.swift"; path = "/Users/brucetukuafu/iOS_Apps/PocketTrainer/PocketTrainer/PocketTrainer/WorkoutList+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		A2110F829F27E4F21842914F /* Pods_PocketTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D015414729AED7E700620D5F /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		D015414929AFCA0A00620D5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -65,12 +73,15 @@
 		4BCAFB982983A0E100C95DA3 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				4BFBFFBB29BB030E0046A6C8 /* WorkoutList */,
 				4B5907B029B1B2C00080D7C8 /* Info.plist */,
 				4B70987729B08143001A0004 /* GoogleService-Info.plist */,
 				4BCAFB992983A0E100C95DA3 /* PocketTrainerApp.swift */,
 				4BCAFB9B2983A0E100C95DA3 /* ContentView.swift */,
+				4BFBFFB529BAF8370046A6C8 /* ViewController.swift */,
 				D015414929AFCA0A00620D5F /* ProfileView.swift */,
 				D015414729AED7E700620D5F /* TrainView.swift */,
+				4BFBFFA329BAE9510046A6C8 /* PT_Database.xcdatamodeld */,
 				4BCAFB9D2983A0E300C95DA3 /* Assets.xcassets */,
 				4BCAFB9F2983A0E300C95DA3 /* Preview Content */,
 			);
@@ -83,6 +94,15 @@
 				4BCAFBA02983A0E300C95DA3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4BFBFFBB29BB030E0046A6C8 /* WorkoutList */ = {
+			isa = PBXGroup;
+			children = (
+				4BFBFFB829BB03080046A6C8 /* WorkoutList+CoreDataClass.swift */,
+				4BFBFFB729BB03080046A6C8 /* WorkoutList+CoreDataProperties.swift */,
+			);
+			path = WorkoutList;
 			sourceTree = "<group>";
 		};
 		8ED827DF1A72BAF94265002E /* Pods */ = {
@@ -218,8 +238,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D015414A29AFCA0A00620D5F /* ProfileView.swift in Sources */,
+				4BFBFFBA29BB03080046A6C8 /* WorkoutList+CoreDataProperties.swift in Sources */,
 				4BCAFB9C2983A0E100C95DA3 /* ContentView.swift in Sources */,
+				4BFBFFA529BAE9510046A6C8 /* PT_Database.xcdatamodeld in Sources */,
+				4BFBFFB929BB03080046A6C8 /* WorkoutList+CoreDataClass.swift in Sources */,
 				D015414829AED7E700620D5F /* TrainView.swift in Sources */,
+				4BFBFFB629BAF8370046A6C8 /* ViewController.swift in Sources */,
 				4BCAFB9A2983A0E100C95DA3 /* PocketTrainerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +455,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4BFBFFA329BAE9510046A6C8 /* PT_Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4BFBFFA429BAE9510046A6C8 /* PT_Database.xcdatamodel */,
+			);
+			currentVersion = 4BFBFFA429BAE9510046A6C8 /* PT_Database.xcdatamodel */;
+			path = PT_Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4BCAFB8E2983A0E100C95DA3 /* Project object */;
 }

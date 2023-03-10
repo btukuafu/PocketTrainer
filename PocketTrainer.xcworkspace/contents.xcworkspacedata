@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/brucetukuafu/iOS_Apps/PocketTrainer/PocketTrainer/PocketTrainer/WorkoutList+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/brucetukuafu/iOS_Apps/PocketTrainer/PocketTrainer/PocketTrainer/WorkoutList+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:PocketTrainer.xcodeproj">
    </FileRef>
    <FileRef

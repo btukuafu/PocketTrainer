@@ -9,6 +9,7 @@
 import SwiftUI
 import FirebaseAuth
 import CoreBluetooth
+import CoreData
 
 class BluetoothViewModel: NSObject, ObservableObject{
     private var centralManager: CBCentralManager?
