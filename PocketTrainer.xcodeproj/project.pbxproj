@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B70987829B08143001A0004 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B70987729B08143001A0004 /* GoogleService-Info.plist */; };
+		4BC324A229C81BCA00C39B34 /* BluetoothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC324A129C81BCA00C39B34 /* BluetoothViewModel.swift */; };
 		4BCAFB9A2983A0E100C95DA3 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAFB992983A0E100C95DA3 /* PocketTrainerApp.swift */; };
 		4BCAFB9C2983A0E100C95DA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAFB9B2983A0E100C95DA3 /* ContentView.swift */; };
 		4BCAFB9E2983A0E300C95DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BCAFB9D2983A0E300C95DA3 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		446E2F874D2923B1EAB1AAA2 /* Pods-PocketTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketTrainer.release.xcconfig"; path = "Target Support Files/Pods-PocketTrainer/Pods-PocketTrainer.release.xcconfig"; sourceTree = "<group>"; };
 		4B5907B029B1B2C00080D7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B70987729B08143001A0004 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BC324A129C81BCA00C39B34 /* BluetoothViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewModel.swift; sourceTree = "<group>"; };
 		4BCAFB962983A0E100C95DA3 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BCAFB992983A0E100C95DA3 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		4BCAFB9B2983A0E100C95DA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				4BFBFFB529BAF8370046A6C8 /* ViewController.swift */,
 				D015414929AFCA0A00620D5F /* ProfileView.swift */,
 				D015414729AED7E700620D5F /* TrainView.swift */,
+				4BC324A129C81BCA00C39B34 /* BluetoothViewModel.swift */,
 				4BFBFFA329BAE9510046A6C8 /* PT_Database.xcdatamodeld */,
 				4BCAFB9D2983A0E300C95DA3 /* Assets.xcassets */,
 				4BCAFB9F2983A0E300C95DA3 /* Preview Content */,
@@ -245,6 +248,7 @@
 				D015414829AED7E700620D5F /* TrainView.swift in Sources */,
 				4BFBFFB629BAF8370046A6C8 /* ViewController.swift in Sources */,
 				4BCAFB9A2983A0E100C95DA3 /* PocketTrainerApp.swift in Sources */,
+				4BC324A229C81BCA00C39B34 /* BluetoothViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
